@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UserData
 {
-    public string health;
-    public string name;
-    public string mana;
-    public string position;
+    public int health = 100;
+    public string name = "Goku";
+    public double mana = 250.5;
+    public Vector3 position = new Vector3(0, 5, 0);
 }

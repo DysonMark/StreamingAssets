@@ -7,7 +7,7 @@ public class LoadTexture : MonoBehaviour
 {
     public string fileName = "penguin.jpeg";
 
-    public string folderPath = Application.streamingAssetsPath;
+     string folderPath = Application.streamingAssetsPath;
 
     private string combinedPath;
     // Start is called before the first frame update
