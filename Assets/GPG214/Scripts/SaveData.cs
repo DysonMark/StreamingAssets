@@ -16,36 +16,33 @@ public class SaveData : MonoBehaviour
 
     private UserData userData;
     private string savePath;
-    private int health = 100;
-    private int n2;
+
+    string health;
+
+    string mana;
+
+    string position;
+    //private int health = 100;
+    //private int n2;
     void Start()
     {
         savePath = Application.streamingAssetsPath + "/PlayerData.json";
         userData = new UserData();
-        userData.health.ToString();
-        userData.mana.ToString();
-        userData.health.ToString();
-        userData.position.ToString();
-        //userData.health = "100";
-        //int.TryParse(userData.health, out health);
-        //userData.name = "Goku";
-        //userData.mana = " " + 1000;
-        //int.Parse(userData.mana);
-        //userData.position = " " + new Vector3(10, 0, 10);
-        //int.Parse(userData.position);
-        Debug.Log("parsing : " + userData.health);
-        if (Object.ReferenceEquals(health.GetType(), n2.GetType()))
+        health = userData.health.ToString();
+        mana = userData.mana.ToString();
+        position = userData.position.ToString();
+        var name = userData.name;
+        if (userData.health.ToString() == "100")
         {
             Debug.Log("Parsing works");
         }
-        //Debug.Log("parsing : " + userData.health + userData.name + userData.position);
     }
 
     public void SavePlayerData()
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            string savePlayer = JsonUtility.ToJson(userData);
+            string savePlayer = JsonUtility.ToJson(health + mana + position + name);
             File.WriteAllText(savePath, savePlayer);
             Debug.Log("Save file has been created at " + savePath);
         }

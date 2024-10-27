@@ -23,7 +23,6 @@ public class LoadAudio : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("here");
             PlaySound();
         }
     }
